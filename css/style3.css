@@ -1,10 +1,12 @@
 /*font-family: 'Heebo', sans-serif;*/
-.style-text-menu {
+.font-style {
     font-family: 'Heebo', sans-serif;
-    font-weight: 700;
     color: rgb(255,255,255);
-    text-transform: uppercase;
+}
+.main-menu {
+    font-weight: 700;
     font-size: 13px;
+    text-transform: uppercase;
     letter-spacing: 1.12px;
 }
 body {
@@ -95,9 +97,89 @@ body {
     position: absolute;
     width: 10px;
     height: 2px;
-    background-color: rgb(255,92,67) ;
+    background-color: rgb(255,92,67);
     bottom: 0;
     left: 5px;
+}
+.container-offer {
+    grid-area: 2 / 3 / 3 / 4;
+    display: grid;
+    grid-template-columns: 1fr 160px;
+}
+.name-offer {
+    font-size: 56px;
+    font-weight: 700;
+}
+.description-offer {
+    line-height: 28px;
+}
+.price-block {
+    width: 397px;
+    height: 120px;
+    background-color: rgb(53,53,53);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price {
+    font-weight: 700;
+    font-size: 30px;
+    margin-left: 28px;
+}
+span.cent {
+    font-weight: 700;
+    color: rgb(211,211,211);
+    font-size: 17px;
+}
+span.point {
+    font-size: 23px;
+}
+.price-block a.button {
+    width: 198px;
+    height: 80px;
+    background-color: rgb(255,92,67);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: background-color 300ms;
+}
+a.button:hover {
+    background-color: rgb(168, 79, 66);
+}a.button:active {
+    background-color: rgba(168, 79, 66, 0.5);
+}
+.text-buy-now {
+    font-weight: 700;
+    font-size: 15px;
+    transition: color 300ms;
+}
+a.button:hover .text-buy-now {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.price-block a.button .basket-picture {
+    border: 2px solid rgba(211,211,211, 0.4);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border 300ms;
+}
+a.button:hover .basket-picture {
+    border-color: rgba(255, 255, 255, 0.75);
+}
+.price-block a.button .basket-picture svg {
+    width: 15px;
+    height: 15px;
+}
+.price-block a.button .basket-picture svg path {
+    fill: rgb(255,255,255);
+    transition: fill 300ms;
+}
+a.button:hover .basket-picture svg path {
+    fill: rgba(255, 255, 255, 0.75);
 }
 
 
