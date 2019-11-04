@@ -151,10 +151,10 @@ span.point {
     transition: background-color 300ms;
 }
 a.button:hover {
-    background-color: rgb(255, 125, 89);
+    background-color: rgb(168, 79, 66);
 }
 a.button:active {
-    background-color: rgb(255, 160, 115);
+    background-color: rgba(168, 79, 66, 0.5);
 }
 .text-buy-now {
     font-weight: 700;
@@ -164,6 +164,7 @@ a.button:active {
 a.button:hover .text-buy-now {
     color: rgba(255, 255, 255, 0.75);
 }
+
 .price-block a.button .basket-picture {
     border: 2px solid rgba(211,211,211, 0.4);
     border-radius: 50%;
