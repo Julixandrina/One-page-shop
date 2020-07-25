@@ -142,7 +142,7 @@ body {
         .main-cover-offer {
           display: flex;
           flex-direction: column;
-          order: 2;
+          /*order: 2;*/
 
           .cover {
             width: 400px;
@@ -190,99 +190,103 @@ body {
             .name-offer {
               font-size: 56px;
               font-weight: 700;
-              margin-top: 70px;
+              /*margin-top: 70px;*/
+              line-height: 1;
+              margin-bottom: 1.5rem;
             }
 
             .description-offer {
               line-height: 1.5;
-              margin-top: 29px;
               word-break: break-word;
+              margin-bottom: 1.5rem;
             }
 
-            .price-block {
-              width: 397px;
-              height: 120px;
-              background-color: rgb(53, 53, 53);
+
+          }
+        }
+        .price-block {
+          max-width: 395px;
+          padding: 1rem;
+          background-color: rgb(53, 53, 53);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+
+          .price {
+            font-weight: 700;
+            font-size: 30px;
+            white-space: nowrap;
+            margin-right: 1rem;
+
+
+            span.cent {
+              font-weight: 700;
+              color: rgb(211, 211, 211);
+              font-size: 17px;
+
+              span.point {
+                font-size: 23px;
+              }
+            }
+
+          }
+
+          .buttons {
+            max-width: 198px;
+            padding: 1rem 1.5rem;
+            background-color: rgb(255, 92, 67);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            transition: background-color 300ms;
+
+            .text-buy-now {
+              font-weight: 700;
+              font-size: 15px;
+              transition: color 300ms;
+              white-space: nowrap;
+              margin-right: 1.5rem;
+
+            }
+
+            &:hover {
+              background-color: rgb(168, 79, 66);
+
+              .text-buy-now {
+                color: rgba(255, 255, 255, 0.75);
+              }
+            }
+
+            &:active {
+              background-color: rgba(168, 79, 66, 0.5);
+            }
+
+            .basket-picture {
+              border: 2px solid rgba(211, 211, 211, 0.4);
+              border-radius: 50%;
+              padding: 1rem;
               display: flex;
-              justify-content: space-between;
+              justify-content: center;
               align-items: center;
-              margin-top: 2rem;
+              transition: border 300ms;
 
-              .price {
-                font-weight: 700;
-                font-size: 30px;
-                margin-left: 28px;
+              .basket-svg {
+                width: 15px;
+                height: 15px;
 
-                span.cent {
-                  font-weight: 700;
-                  color: rgb(211, 211, 211);
-                  font-size: 17px;
-
-                  span.point {
-                    font-size: 23px;
-                  }
+                path {
+                  fill: rgb(255, 255, 255);
+                  transition: fill 300ms;
                 }
-
               }
 
-              .buttons {
-                width: 198px;
-                height: 80px;
-                background-color: rgb(255, 92, 67);
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                transition: background-color 300ms;
+              &:hover .basket-picture {
+                border-color: rgba(255, 255, 255, 0.75);
+              }
 
-                .text-buy-now {
-                  font-weight: 700;
-                  font-size: 15px;
-                  transition: color 300ms;
-
-                }
-
-                &:hover {
-                  background-color: rgb(168, 79, 66);
-
-                  .text-buy-now {
-                    color: rgba(255, 255, 255, 0.75);
-                  }
-                }
-
-                &:active {
-                  background-color: rgba(168, 79, 66, 0.5);
-                }
-
-                .basket-picture {
-                  border: 2px solid rgba(211, 211, 211, 0.4);
-                  border-radius: 50%;
-                  width: 50px;
-                  height: 50px;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  transition: border 300ms;
-
-                  .basket-svg {
-                    width: 15px;
-                    height: 15px;
-
-                    path {
-                      fill: rgb(255, 255, 255);
-                      transition: fill 300ms;
-                    }
-                  }
-
-                  &:hover .basket-picture {
-                    border-color: rgba(255, 255, 255, 0.75);
-                  }
-
-                  &:hover .basket-picture basket-svg path {
-                    fill: rgba(255, 255, 255, 0.75);
-                  }
-                }
-
-
+              &:hover .basket-picture basket-svg path {
+                fill: rgba(255, 255, 255, 0.75);
               }
             }
           }
@@ -405,9 +409,30 @@ body {
            display: none;
          }
        }
+       .content-product {
+         padding: 1.5rem;
+         flex-direction: column-reverse;
+         .main-cover-offer {
+           width: 50%;
+           margin-top: -140px;
+
+         }
+         .container-offer {
+           order: 3;
+         }
+         .price-block {
+           align-self: flex-end;
+         }
+       }
+
+
 
        .preview-next-offer {
          align-self: center;
+         .arrows {
+           width: auto;
+
+         }
        }
 
      }
@@ -422,35 +447,64 @@ body {
 
     .main-container-blocks {
       .sidebar {
-        width: 60px;
+        width: 40px;
       }
       .main-page-content {
         margin-right: 20px;
         margin-left: 20px;
         .main-menu {
+          display: none;
 
 
         }
         .content-product {
-          flex-direction: column;
-          padding: 0 1.5rem;
+          /*flex-direction: column;*/
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr 132px;
+
 
           .main-cover-offer {
-            width: 350px;
+            width: 300px;
+            grid-area: 2/1/3/2;
+            margin-top: 0;
             .cover {
-              width: 350px;
+              width: 300px;
             }
           }
           .container-offer {
+            grid-area: 1 / 1 / 2 / 2;
             .offer {
               .name-offer {
                 margin-top: 0;
-                font-size: 28px;
+                margin-bottom: 1rem;
+                /*font-size: 28px;*/
 
               }
               .description-offer {
-                margin-top: 1rem;
-                font-size: 14px;
+                /*font-size: 14px;*/
+              }
+
+            }
+          }
+          .price-block {
+            flex-direction: column;
+            padding: .5rem;
+            grid-area: 3 / 1 / 4 / 2;
+            margin-bottom: 0;
+
+            .price {
+              margin-right: 0;
+              margin-bottom: 0.5rem;
+              font-size: 20px;
+            }
+            .buttons {
+              padding: 0.5rem 1rem;
+              .text-buy-now {
+                margin-right: 1rem;
+              }
+              .basket-picture {
+                padding: 0.5rem;
               }
             }
           }
@@ -462,13 +516,37 @@ body {
             flex-direction: column;
             .next-offer {
               margin-bottom: 1rem;
+
             }
 
           }
+
         }
 
       }
     }
+  }
+
+}
+@media (max-width: 475px) {
+  body .main-container-blocks .main-page-content {
+    max-width: 300px;
+  }
+  body .main-container-blocks .main-page-content .content-product .container-offer .offer .name-offer {
+    font-size: 2rem;
+  }
+  body .main-container-blocks .main-page-content .content-product .main-cover-offer .container-feature .container-performance .description-feature {
+    font-size: 13px;
+  }
+  body .main-container-blocks .main-page-content .content-product .main-cover-offer {
+    width: 100%;
+  }
+  body .main-container-blocks .main-page-content .preview-next-offer .preview-products-block .next-offer {
+    width: 185px;
+    margin-right: 0;
+  }
+  body .main-container-blocks .main-page-content .content-product .main-cover-offer .cover {
+    width: 200px;
   }
 
 }
