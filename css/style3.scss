@@ -6,7 +6,7 @@
 
 body {
   background-color: #47565a;
-  height: 100vh;
+
 
 
   .main-container-blocks {
@@ -18,19 +18,20 @@ body {
     height: 100%;
 
     .sidebar {
-      width: 80px;
+      /*width: 80px;*/
       background-color: rgb(53, 53, 53);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       align-items: center;
+      padding: 1.5rem 1.5rem;
 
       a.logo {
-        width: 80px;
-        height: 80px;
+        /*width: 80px;
+        height: 60px;*/
         display: flex;
         align-items: center;
         justify-content: center;
+
 
         svg {
           width: 25px;
@@ -45,7 +46,8 @@ body {
         justify-items: flex-end;
         align-items: center;
         justify-content: space-around;
-        flex-basis: 30%;
+        flex-basis: 20%;
+        margin-top: 18rem;
 
         a.style-icon-sidebar {
           svg {
@@ -77,6 +79,9 @@ body {
       flex-direction: column;
       align-items: flex-end;
       height: 100%;
+      .mobile-menu {
+        display: none;
+      }
       .main-menu {
         display: flex;
         align-items: center;
@@ -84,14 +89,14 @@ body {
         font-size: 13px;
         text-transform: uppercase;
         letter-spacing: 1.12px;
-        min-height: 80px;
-        /*padding: 1.5rem 0 1.5rem;*/
+        /*min-height: 60px;*/
         justify-content: space-between;
         margin-bottom: 2rem;
 
 
         .item-menu {
           display: flex;
+          padding:  1.5rem 1.5rem;
 
           li {
             margin-right: 35px;
@@ -138,10 +143,13 @@ body {
         max-width: 1250px;
         padding: 0 120px 0 1.5rem;
         margin-bottom: 2rem;
+        flex-wrap: wrap-reverse;
+        justify-content: space-between;
 
         .main-cover-offer {
           display: flex;
           flex-direction: column;
+          flex-basis: 50%;
           /*order: 2;*/
 
           .cover {
@@ -154,6 +162,7 @@ body {
           .container-feature {
             display: flex;
             justify-content: center;
+            padding: 0.5rem 0;
 
             .container-performance {
               display: flex;
@@ -181,6 +190,7 @@ body {
 
         .container-offer {
           display: flex;
+          order: 3;
 
 
           .offer {
@@ -211,7 +221,8 @@ body {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 1.5rem;
+          align-self: center;
+          margin-bottom: -4px;
 
           .price {
             font-weight: 700;
@@ -298,12 +309,12 @@ body {
         .preview-products-block {
           display: flex;
           .next-offer {
-            width: 259px;
-            height: 156px;
             background-color: rgb(255, 255, 255);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-right: 2rem;
+            display: flex;
+            width: 305px;
+            height: 160px;
+            padding: 0.5rem;
+            margin-right: 1rem;
 
             &:nth-child(even) {
               margin-right: 0;
@@ -313,6 +324,10 @@ body {
               display: flex;
               justify-content: center;
               align-items: center;
+              margin-right: 0.5rem;
+              flex-basis: 50%;
+              min-width: 100px;
+              flex-grow: 1;
 
               img {
                 width: 100px;
@@ -324,11 +339,12 @@ body {
               display: flex;
               flex-direction: column;
               justify-content: space-around;
+              flex-grow: 1;
+              flex-basis: 50%;
 
               .info-product {
                 display: flex;
                 flex-direction: column;
-                line-height: 23px;
 
                 .name-product {
                   color: rgb(98, 98, 98);
@@ -403,22 +419,23 @@ body {
      .main-page-content {
        .main-menu {
          margin-bottom: 1rem;
-         padding:  0 1.5rem;
-         align-self: start;
+         align-self: flex-end;
          .label-shop {
            display: none;
          }
        }
        .content-product {
-         padding: 1.5rem;
+         padding: 0 1.5rem;
          flex-direction: column-reverse;
+         flex-wrap: wrap;
          .main-cover-offer {
            width: 50%;
-           margin-top: -140px;
+           margin-top: -110px;
 
          }
          .container-offer {
            order: 3;
+           padding-top: 1rem;
          }
          .price-block {
            align-self: flex-end;
@@ -447,13 +464,23 @@ body {
 
     .main-container-blocks {
       .sidebar {
-        width: 40px;
+        padding-left: .5rem;
+        padding-right: 0.5rem;
       }
       .main-page-content {
         margin-right: 20px;
         margin-left: 20px;
+        .mobile-menu {
+          display: block;
+        }
         .main-menu {
-          display: none;
+          margin-bottom: 1rem;
+          padding:  1.5rem 1.5rem;
+          .item-menu {
+            display: none;
+          }
+
+
 
 
         }
@@ -461,24 +488,27 @@ body {
           /*flex-direction: column;*/
           display: grid;
           grid-template-columns: 1fr;
-          grid-template-rows: auto 1fr 132px;
+          grid-template-rows: auto 1fr;
+          padding-bottom: 0;
 
 
           .main-cover-offer {
             width: 300px;
             grid-area: 2/1/3/2;
             margin-top: 0;
+            margin-bottom: 1.5rem;
             .cover {
               width: 300px;
+              margin-bottom: 1rem;
             }
           }
           .container-offer {
             grid-area: 1 / 1 / 2 / 2;
+
             .offer {
               .name-offer {
                 margin-top: 0;
-                margin-bottom: 1rem;
-                /*font-size: 28px;*/
+                margin-bottom: 1.5rem;
 
               }
               .description-offer {
@@ -488,14 +518,13 @@ body {
             }
           }
           .price-block {
-            flex-direction: column;
-            padding: .5rem;
+            padding: 2rem .5rem;
             grid-area: 3 / 1 / 4 / 2;
             margin-bottom: 0;
+            align-self: center;
 
             .price {
               margin-right: 0;
-              margin-bottom: 0.5rem;
               font-size: 20px;
             }
             .buttons {
@@ -512,13 +541,20 @@ body {
 
         .preview-next-offer {
           align-self: center;
+          width: 100%;
+          justify-content: center;
           .preview-products-block {
             flex-direction: column;
             .next-offer {
               margin-bottom: 1rem;
+              width: 300px;
 
             }
 
+          }
+          .arrows {
+            margin-right: 1rem;
+            margin-left: 1rem;
           }
 
         }
@@ -546,7 +582,12 @@ body {
     margin-right: 0;
   }
   body .main-container-blocks .main-page-content .content-product .main-cover-offer .cover {
-    width: 200px;
+    width: 250px;
+    align-self: center;
+  }
+  body .main-container-blocks .main-page-content .preview-next-offer .preview-products-block {
+    flex-grow: 1;
+    align-items: center;
   }
 
 }
