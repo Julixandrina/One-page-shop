@@ -1,1 +1,1 @@
-# Shop
+# One-page shop
